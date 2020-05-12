@@ -1,0 +1,2 @@
+rootProject.name='Kotlin Mobile Test Currency'
+include ':app'

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/ConvertFragment">
+
+    <fragment
+        android:id="@+id/ConvertFragment"
+        android:name="com.shingto.kotlinmobiletestcurrency.ConvertFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_convert">
+        <action
+            android:id="@+id/action_ConvertFragment_to_HistoryFragment"
+            app:destination="@id/HistoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/HistoryFragment"
+        android:name="com.shingto.kotlinmobiletestcurrency.HistoryFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_history">
+        <action
+            android:id="@+id/action_HistoryFragment_to_ConvertFragment"
+            app:destination="@id/ConvertFragment" />
+    </fragment>
+</navigation>
