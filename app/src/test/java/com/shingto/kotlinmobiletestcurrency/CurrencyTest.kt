@@ -6,11 +6,6 @@ import org.junit.Assert.*
 
 import com.shingto.kotlinmobiletestcurrency.model.Currency
 
-/**
- * Example local unit test, which will execute on the development machine (host).
- *
- * See [testing documentation](http://d.android.com/tools/testing).
- */
 class CurrencyTest {
     @Test
     fun create_currency() {
@@ -26,6 +21,13 @@ class CurrencyTest {
         val sgd: Currency =
             Currency("SGD", "S$")
         assertEquals("S$12,345.67", sgd.displayValue(1234567))
+    }
+
+    @Test
+    fun display_value_cents_zero() {
+        val sgd: Currency =
+            Currency("SGD", "S$")
+        assertEquals("S$0.00", sgd.displayValue(0))
     }
 
     @Test

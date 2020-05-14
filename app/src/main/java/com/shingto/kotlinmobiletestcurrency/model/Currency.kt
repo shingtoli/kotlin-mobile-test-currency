@@ -5,12 +5,12 @@ import java.text.DecimalFormat
 const val apiBaseUrl: String = "https://api.exchangeratesapi.io/latest?base="
 val acceptedCurrencies = listOf<String>("SGD", "MYR", "USD", "EUR")
 
-val centsFormat: DecimalFormat = DecimalFormat("#,###.##")
+val centsFormat: DecimalFormat = DecimalFormat("#,##0.00")
 val baseFormat: DecimalFormat = DecimalFormat("#,###")
 
 class Currency(val code: String, val sign: String, val usesCents: Boolean = true) {
     val rates: MutableMap<String, Double> = mutableMapOf()
-    val currencies: List<String> = acceptedCurrencies.filter { it != code }
+    private val currencies: List<String> = acceptedCurrencies.filter { it != code }
 
     init {
         currencies.forEach {
